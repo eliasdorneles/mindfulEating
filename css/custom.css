@@ -1,0 +1,13 @@
+.main-options h3 {
+	 font-variant:small-caps;
+}
+.main-options li {
+	cursor:pointer;
+}
+.feedback {
+	width: 100%;
+}
+.feedback .smiley {
+	text-align: center;
+	font-size:70px;
+}
