@@ -4,10 +4,10 @@ $(document).on("pageinit", function(event){
 	// custom code goes here
 	var mainContent = $('#main-content');
 	var motivationalMessages = [
-		["That's awesome!"],
-		["Not bad, not bad."],
-		["Dude!<br />Be careful..."],
-		["Ok, you've messed up...<br />Do better next time!"]
+		["That's awesome!", "Fantastic!", "Kudos. :)"],
+		["Not bad, not bad.", "That's nice!", "Good sport!"],
+		["Dude!<br />Be careful...", "Well... But take control next time."],
+		["Ok, you've messed up...<br />Do better next time!", "Duuude! Don't do that... :("]
 	];
 	var SMILEYS = ['☼', '☺', '☹', '☠'];
 	var getRandomElement = function(items) {
