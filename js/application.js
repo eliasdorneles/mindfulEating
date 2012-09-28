@@ -1,4 +1,5 @@
 $(document).on("pageinit", function(event){
+	var loadApp = null; // init loadApp
 	function h1(text){ return "<h1>" + text + "</h1>";  };
 	// custom code goes here
 	var mainContent = $('#main-content');
@@ -16,7 +17,10 @@ $(document).on("pageinit", function(event){
 		var msg = "<div class='feedback'>";
 		msg += "<h1 class='smiley'>" + SMILEYS[level] + "</h1>"
 		msg += "<h1>" + getRandomElement(motivationalMessages[level]) + "</h1>"
+		msg += '<a href="index.html" data-role="button" data-icon="check" data-theme="b">Okay</a>';
 		msg += "</div>";
+		msg = $(msg);
+		msg.find('a').click(loadApp);
 		return msg;
 	};
 
@@ -24,20 +28,24 @@ $(document).on("pageinit", function(event){
 		// setup main events
 		$('#very-much').click(function(){
 			mainContent.html(getFeedback(0));
+			mainContent.trigger('create');
 		});
 		$('#reasonably').click(function(){
 			mainContent.html(getFeedback(1));
+			mainContent.trigger('create');
 		});
 		$('#not-much').click(function(){
 			mainContent.html(getFeedback(2));
+			mainContent.trigger('create');
 		});
 		$('#anything-but').click(function(){
 			mainContent.html(getFeedback(3));
+			mainContent.trigger('create');
 		});
 	}
 
 	// load app
-	var loadApp = function() {
+	loadApp = function() {
 		function createOption(id, label, comment) {
 			return '<li id="' + id + '"><h3>' + label + '</h3><p>' + comment + '</p>';
 		};
